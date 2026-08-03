@@ -2,3 +2,18 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Menghilangkan margin bawah bawaan gambar hero agar dempet dasar section */
+#beranda img {
+    margin-bottom: 0 !important;
+    vertical-align: bottom;
+}
+
+/* Transisi halus saat tombol di-hover */
+#beranda .btn {
+    transition: all 0.2s ease-in-out;
+}
+
+#beranda .btn:hover {
+    transform: translateY(-2px);
+}
