@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTSP Online - Kemenag Kabupaten Aceh Tengah</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+                <!-- Tambahkan logo kemenag jika ada -->
+                <span>PTSP Online Kemenag Aceh Tengah</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#layanan-umum"><i class="fa-solid fa-users me-2"></i>Masyarakat Umum</a></li>
+                            <li><a class="dropdown-item" href="#layanan-asn"><i class="fa-solid fa-user-tie me-2"></i>Khusus ASN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#prosedur">Prosedur</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#konsultasi">Konsultasi</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-warning text-dark fw-bold rounded-pill px-3" href="#cek-pengajuan">
+                            <i class="fa-solid fa-magnifying-glass me-1"></i> Cek Pengajuan
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="bg-dark text-white py-5 position-relative" style="background: linear-gradient(135deg, #0f5132 0%, #000000 100%);">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start mb-4 mb-lg-0">
+                    <span class="badge bg-warning text-dark mb-2 px-3 py-2 rounded-pill fw-semibold">Pelayanan Terpadu Satu Pintu</span>
+                    <h1 class="display-5 fw-bold mb-3">KEMENAG ACEH TENGAH (PTSP ONLINE)</h1>
+                    <p class="lead text-light mb-4">Layanan Perizinan, Non Perizinan, Informasi, Konsultasi, Pengaduan, dan Legalisir Dokumen secara Cepat & Transparan.</p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#layanan-umum" class="btn btn-light btn-lg fw-bold px-4 shadow-sm text-success">
+                            <i class="fa-solid fa-users me-2"></i> Layanan Umum (Masyarakat)
+                        </a>
+                        <a href="#layanan-asn" class="btn btn-outline-light btn-lg fw-bold px-4">
+                            <i class="fa-solid fa-user-gear me-2"></i> Layanan Khusus ASN
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <!-- Ilustrasi/Petugas -->
+                    <img src="assets/img/hero-img.png" alt="PTSP Online" class="img-fluid rounded-4 shadow" style="max-height: 380px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG & MASKOT SECTION -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-md-4 text-center">
+                    <img src="assets/img/mascot.png" alt="Maskot PTSP" class="img-fluid" style="max-height: 320px;">
+                </div>
+                <div class="col-md-8">
+                    <h2 class="fw-bold text-success mb-3">Tentang PTSP Online</h2>
+                    <p class="text-secondary leading-relaxed">
+                        Aplikasi ini dibuat untuk memudahkan masyarakat dalam melakukan pengajuan permohonan pengurusan berbagai macam perizinan. Aplikasi Pelayanan ini terdiri dari berbagai jenis layanan yang dapat diperoleh dari satu tempat dan dapat diakses secara online.
+                    </p>
+                    <p class="text-secondary leading-relaxed">
+                        Kantor Kementerian Agama Kabupaten Aceh Tengah merupakan salah satu Instansi Pemerintah Kabupaten Aceh Tengah yang telah melakukan pelayanan pengajuan perizinan melalui aplikasi online sejak 01 Juli 2021.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROSEDUR PENGAJUAN -->
+    <section id="prosedur" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-success">Prosedur Pengajuan PTSP Online</h2>
+                <p class="text-muted">6 Langkah mudah mengajukan dokumen/layanan online</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">1. Memilih Layanan</div>
+                            <h5 class="card-title fw-bold">Pilih Jenis Layanan</h5>
+                            <p class="card-text text-muted small">Langkah pertama, pilih layanan yang Anda butuhkan sesuai dengan daftar kategori yang tersedia.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">2. Isi Formulir</div>
+                            <h5 class="card-title fw-bold">Pengisian Formulir</h5>
+                            <p class="card-text text-muted small">Ajukan permohonan dengan mengisi Form (Tally.so) serta melengkapi syarat administrasi.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">3. Verifikasi</div>
+                            <h5 class="card-title fw-bold">Proses Verifikasi</h5>
+                            <p class="card-text text-muted small">Administrator akan mengecek syarat kelengkapan administrasi dan keabsahan isi dokumen Anda.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">4. Status Notifikasi</div>
+                            <h5 class="card-title fw-bold">Notifikasi WhatsApp</h5>
+                            <p class="card-text text-muted small">Anda akan menerima update status permohonan secara real-time via WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">5. Permohonan Selesai</div>
+                            <h5 class="card-title fw-bold">Penyelesaian Dokumen</h5>
+                            <p class="card-text text-muted small">Produk dokumen selesai diproses dan siap dikirimkan atau diambil di kantor.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm p-3 rounded-4">
+                        <div class="card-body">
+                            <div class="badge bg-success mb-3 px-3 py-2 fs-6 rounded-pill">6. Unduh / Ambil</div>
+                            <h5 class="card-title fw-bold">Unduh Dokumen</h5>
+                            <p class="card-text text-muted small">Petugas mengirimkan berkas digital yang dapat diunduh langsung atau diambil fisik jika diperlukan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-success mb-3">Kementerian Agama Kabupaten Aceh Tengah</h5>
+                    <p class="text-light small mb-1"><i class="fa-solid fa-location-dot me-2"></i> Jln. Takengon - Bireuen Paya Tumpi, Takengon 24551</p>
+                    <p class="text-light small"><i class="fa-solid fa-phone me-2"></i> Telp: (0643) 21368</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5 class="fw-bold text-success mb-3">Waktu Layanan PTSP Online</h5>
+                    <p class="text-light small mb-0"><i class="fa-regular fa-clock me-2"></i> <strong>Senin - Jumat:</strong> 08.00 WIB s.d. 15.00 WIB</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-muted small">
+                &copy; 2026 PTSP Online Kemenag Kabupaten Aceh Tengah. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
