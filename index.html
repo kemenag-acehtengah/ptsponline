@@ -18,28 +18,27 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
-                <!-- Tambahkan logo kemenag jika ada -->
                 <span>PTSP Online Kemenag Aceh Tengah</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Layanan</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#layanan-umum"><i class="fa-solid fa-users me-2"></i>Masyarakat Umum</a></li>
-                            <li><a class="dropdown-item" href="#layanan-asn"><i class="fa-solid fa-user-tie me-2"></i>Khusus ASN</a></li>
-                        </ul>
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#prosedur">Prosedur</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#konsultasi">Konsultasi</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prosedur">Prosedur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#standar-pelayanan">Standar Pelayanan</a>
+                    </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a class="btn btn-warning text-dark fw-bold rounded-pill px-3" href="#cek-pengajuan">
-                            <i class="fa-solid fa-magnifying-glass me-1"></i> Cek Pengajuan
-                        </a>
+                        <!-- Tombol Pemicu Popup Modal -->
+                        <button type="button" class="btn btn-warning text-dark fw-bold rounded-pill px-4 shadow-sm" data-bs-toggle="modal" data-bs-target="#modalKonsultasi">
+                            <i class="fa-regular fa-paper-plane me-1"></i> Konsultasi
+                        </button>
                     </li>
                 </ul>
             </div>
@@ -187,7 +186,7 @@
                 </div>
             </div>
             <hr class="border-secondary">
-            <div class="text-center text-muted small">
+            <div class="text-center small">
                 &copy; 2026 PTSP Online Kemenag Kabupaten Aceh Tengah. All rights reserved.
             </div>
         </div>
@@ -195,5 +194,81 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- MODAL POPUP KONSULTASI & PENGADUAN -->
+    <div class="modal fade" id="modalKonsultasi" tabindex="-1" aria-labelledby="modalKonsultasiLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <!-- Modal Header -->
+                <div class="modal-header border-bottom-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success fs-5" id="modalKonsultasiLabel">
+                        Layanan Konsultasi Dan Pengaduan
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4">
+                    <!-- Kartu WhatsApp Utama -->
+                    <div class="card border-0 bg-light rounded-4 p-3 mb-3 shadow-sm">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-success text-white rounded-circle p-2 fs-4 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1 text-dark">WhatsApp Konsultasi & Pengaduan</h6>
+                                <p class="text-muted small mb-3">Pertanyaan dan aduan Anda tersambung langsung dengan saluran resmi kami.</p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Admin%20PTSP,%20saya%20ingin%20konsultasi" target="_blank" class="btn btn-sm btn-outline-success fw-semibold rounded-pill px-3">
+                                        Layanan/Konsultasi
+                                    </a>
+                                    <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20Admin%20PTSP,%20saya%20ingin%20menyampaikan%20pengaduan" target="_blank" class="btn btn-sm btn-outline-danger fw-semibold rounded-pill px-3">
+                                        Keluhan/Pengaduan
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion untuk Saluran Lain -->
+                    <div class="accordion accordion-flush" id="accordionKonsultasi">
+                        <!-- Mail Box -->
+                        <div class="accordion-item border rounded-3 mb-2 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMail">
+                                    <i class="fa-solid fa-envelope me-2 text-primary"></i> Mail Box
+                                </button>
+                            </h2>
+                            <div id="collapseMail" class="accordion-collapse collapse" data-bs-parent="#accordionKonsultasi">
+                                <div class="accordion-body small text-muted">
+                                    Kirimkan surat atau pertanyaan Anda melalui surel resmi kami di:<br>
+                                    <a href="mailto:kemenagacehtengah@kemenag.go.id" class="fw-bold text-success">kemenagacehtengah@kemenag.go.id</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Whistleblowing System -->
+                        <div class="accordion-item border rounded-3 overflow-hidden">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWBS">
+                                    <i class="fa-solid fa-bullhorn me-2 text-warning"></i> Whistleblowing System (WBS)
+                                </button>
+                            </h2>
+                            <div id="collapseWBS" class="accordion-collapse collapse" data-bs-parent="#accordionKonsultasi">
+                                <div class="accordion-body small text-muted">
+                                    Laporkan indikasi pelanggaran secara rahasia dan aman melalui portal WBS resmi Kementerian Agama.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-light fw-bold rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
