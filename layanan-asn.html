@@ -10,41 +10,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         .hero-asn {
-            background-color: #064e3b; /* Hijau Kemenag / Emerald */
+            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
             color: white;
         }
         .btn-filter.active {
             background-color: #064e3b !important;
             color: white !important;
+            border-color: #064e3b !important;
         }
     </style>
 </head>
-<body class="bg-light">
+<body class="bg-light d-flex flex-column min-vh-100">
 
-    <!-- Header / Banner Halaman ASN -->
-    <section class="hero-asn py-5 text-center mb-4">
+    <!-- NAVBAR (Dipanggil via JS) -->
+    <div id="navbar-container"></div>
+
+    <!-- ================= HERO / HEADER ================= -->
+    <section class="hero-asn py-5 text-center mb-4 shadow-sm">
         <div class="container">
             <h1 class="fw-bold mb-2">Layanan Khusus ASN Kemenag</h1>
-            <p class="lead opacity-75">Panduan persyaratan, template dokumen, dan pengajuan layanan kepegawaian & keuangan.</p>
-            <a href="index.html" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-2">
+            <p class="lead opacity-75 mb-3">Panduan persyaratan, template dokumen, dan pengajuan layanan kepegawaian & keuangan.</p>
+            <a href="index.html" class="btn btn-sm btn-outline-light rounded-pill px-3">
                 <i class="fa-solid fa-arrow-left me-1"></i> Kembali ke Beranda
             </a>
         </div>
     </section>
 
-    <!-- Konten Utama -->
-    <div class="container mb-5">
+    <!-- ================= KONTEN UTAMA ================= -->
+    <main class="container mb-5 flex-grow-1">
         
         <!-- Bar Search & Filter -->
         <div class="row g-3 mb-4 align-items-center">
             <div class="col-md-6">
-                <div class="input-group">
-                    <span class="input-group-text bg-white border-end-0 rounded-start-pill"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
-                    <input type="text" id="searchInput" class="form-control border-start-0 rounded-end-pill py-2" placeholder="Cari layanan ASN (misal: Pensiun, Cuti, Gaji)...">
+                <div class="input-group shadow-sm rounded-pill overflow-hidden">
+                    <span class="input-group-text bg-white border-end-0 ps-3"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                    <input type="text" id="searchInput" class="form-control border-start-0 py-2" placeholder="Cari layanan ASN (misal: Pensiun, Cuti, Gaji)...">
                 </div>
             </div>
             <div class="col-md-6 d-flex gap-2 justify-content-md-end flex-wrap">
-                <button class="btn btn-outline-success btn-filter active rounded-pill px-3" onclick="filterSeksi('semua', this)">Semua Layanan</button>
+                <button class="btn btn-outline-success btn-filter active rounded-pill px-3" onclick="filterSeksi('semua', this)">Semua Seksi</button>
                 <button class="btn btn-outline-success btn-filter rounded-pill px-3" onclick="filterSeksi('kepegawaian', this)">Kepegawaian</button>
                 <button class="btn btn-outline-success btn-filter rounded-pill px-3" onclick="filterSeksi('keuangan', this)">Keuangan</button>
             </div>
@@ -361,41 +365,108 @@
             </div>
 
         </div>
-    </div>
 
-    <!-- Script Search & Filter -->
+        <!-- Pesan jika pencarian/filter tidak ditemukan -->
+        <div id="noResults" class="text-center py-5" style="display: none;">
+            <i class="fa-solid fa-magnifying-glass text-muted display-4 mb-3"></i>
+            <h5 class="fw-bold text-secondary">Layanan tidak ditemukan</h5>
+            <p class="text-muted small">Coba gunakan kata kunci lain atau pilih tab filter "Semua Seksi".</p>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold text-success mb-3">Kementerian Agama Kabupaten Aceh Tengah</h5>
+                    <p class="text-light small mb-1"><i class="fa-solid fa-location-dot me-2"></i> Jln. Takengon - Bireuen Paya Tumpi, Takengon 24551</p>
+                    <p class="text-light small"><i class="fa-solid fa-phone me-2"></i> Telp: (0643) 21368</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5 class="fw-bold text-success mb-3">Waktu Layanan PTSP Online</h5>
+                    <p class="text-light small mb-0"><i class="fa-regular fa-clock me-2"></i> <strong>Senin - Jumat:</strong> 08.00 WIB s.d. 15.00 WIB</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small">
+                &copy; 2026 PTSP Online Kemenag Kabupaten Aceh Tengah. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- PENAMPUNG MODAL KONSULTASI -->
+    <div id="modal-container"></div>
+
+    <!-- Script Bootstrap & Dynamic Search/Filter -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Fitur Pencarian Realtime
+
+        // 1. Load Navbar & Modal Konsultasi
+        fetch('navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        fetch('modal-konsultasi.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('modal-container').innerHTML = data;
+            });
+            
+        let activeSeksi = 'semua';
+
+        function checkEmptyResults() {
+            let items = document.querySelectorAll('.item-layanan');
+            let visibleCount = 0;
+
+            items.forEach(function(item) {
+                if (item.style.display !== "none") {
+                    visibleCount++;
+                }
+            });
+
+            let noResultsDiv = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResultsDiv.style.display = "block";
+            } else {
+                noResultsDiv.style.display = "none";
+            }
+        }
+
+        // Live Search Filter
         document.getElementById('searchInput').addEventListener('keyup', function() {
             let filter = this.value.toLowerCase();
             let items = document.querySelectorAll('.item-layanan');
 
             items.forEach(function(item) {
                 let text = item.getAttribute('data-keywords') + " " + item.innerText.toLowerCase();
-                if (text.includes(filter)) {
+                let itemSeksi = item.getAttribute('data-seksi');
+
+                let matchesSearch = text.includes(filter);
+                let matchesFilter = (activeSeksi === 'semua' || itemSeksi === activeSeksi);
+
+                if (matchesSearch && matchesFilter) {
                     item.style.display = "";
                 } else {
                     item.style.display = "none";
                 }
             });
+
+            checkEmptyResults();
         });
 
-        // Fitur Filter per Seksi
+        // Filter per Seksi (Kepegawaian / Keuangan / Semua)
         function filterSeksi(seksi, btn) {
-            let items = document.querySelectorAll('.item-layanan');
+            activeSeksi = seksi;
             let buttons = document.querySelectorAll('.btn-filter');
-
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            items.forEach(item => {
-                if (seksi === 'semua' || item.getAttribute('data-seksi') === seksi) {
-                    item.style.display = "";
-                } else {
-                    item.style.display = "none";
-                }
-            });
+            // Trigger pencarian ulang dengan kategori seksi yang baru
+            document.getElementById('searchInput').dispatchEvent(new Event('keyup'));
         }
     </script>
 </body>
