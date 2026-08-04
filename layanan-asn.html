@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Khusus ASN Kemenag</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .hero-asn {
+            background-color: #064e3b; /* Hijau Kemenag / Emerald */
+            color: white;
+        }
+        .btn-filter.active {
+            background-color: #064e3b !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- Header / Banner Halaman ASN -->
+    <section class="hero-asn py-5 text-center mb-4">
+        <div class="container">
+            <h1 class="fw-bold mb-2">Layanan Khusus ASN Kemenag</h1>
+            <p class="lead opacity-75">Panduan persyaratan, template dokumen, dan pengajuan layanan kepegawaian & keuangan.</p>
+            <a href="index.html" class="btn btn-sm btn-outline-light rounded-pill px-3 mt-2">
+                <i class="fa-solid fa-arrow-left me-1"></i> Kembali ke Beranda
+            </a>
+        </div>
+    </section>
+
+    <!-- Konten Utama -->
+    <div class="container mb-5">
+        
+        <!-- Bar Search & Filter -->
+        <div class="row g-3 mb-4 align-items-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0 rounded-start-pill"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                    <input type="text" id="searchInput" class="form-control border-start-0 rounded-end-pill py-2" placeholder="Cari layanan ASN (misal: Pensiun, Cuti, Gaji)...">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex gap-2 justify-content-md-end flex-wrap">
+                <button class="btn btn-outline-success btn-filter active rounded-pill px-3" onclick="filterSeksi('semua', this)">Semua Layanan</button>
+                <button class="btn btn-outline-success btn-filter rounded-pill px-3" onclick="filterSeksi('kepegawaian', this)">Kepegawaian</button>
+                <button class="btn btn-outline-success btn-filter rounded-pill px-3" onclick="filterSeksi('keuangan', this)">Keuangan</button>
+            </div>
+        </div>
+
+        <!-- Daftar Accordion Layanan ASN -->
+        <div class="accordion" id="accordionLayanan">
+
+            <!-- ================= SEKSI KEPEGAWAIAN ================= -->
+
+            <!-- Layanan 7 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="7 permohonan pengusulan rekomendasi tugas belajar kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan7">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 7. Pelayanan Permohonan Pengusulan Rekomendasi Tugas Belajar
+                    </button>
+                </h2>
+                <div id="layanan7" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Surat Pengantar</li>
+                            <li>SK CPNS</li>
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>SKP / Kinerja (2 Tahun Terakhir)</li>
+                            <li>Surat Perjanjian Tugas Belajar dengan Kemenag Kab/Kota</li>
+                            <li>Surat Perjanjian Tugas Belajar dengan Kanwil</li>
+                            <li>Akreditasi Kampus dan Prodi</li>
+                            <li>Surat Keterangan Kuliah</li>
+                            <li>Jadwal Kuliah</li>
+                            <li>Surat Pernyataan Biaya Mandiri</li>
+                            <li>Surat Pernyataan Menyatakan Kesediaan Untuk Tugas Belajar dari Atasan Langsung</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 8 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="8 permohonan rekomendasi pindah tempat tugas mutasi kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan8">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 8. Pelayanan Permohonan Rekomendasi Pindah Tempat Tugas
+                    </button>
+                </h2>
+                <div id="layanan8" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Permohonan Pindah Tugas</li>
+                            <li>Surat Keterangan Lulus Butuh</li>
+                            <li>Surat Rekomendasi dari Tempat Tugas Asal</li>
+                            <li>SK CPNS</li>
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>Kinerja (2 Tahun Terakhir)</li>
+                            <li>Anjab ABK</li>
+                            <li>Peta Jabatan</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 9 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="9 permohonan pengusulan pensiun purnatugas kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan9">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 9. Pelayanan Permohonan Pengusulan Pensiun
+                    </button>
+                </h2>
+                <div id="layanan9" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>Kinerja <em>(2 Tahun Terakhir)</em></li>
+                            <li>Buku Nikah</li>
+                            <li>Akta Kelahiran Anak</li>
+                            <li>Buku Rekening</li>
+                            <li>NPWP</li>
+                            <li>KTP</li>
+                            <li>Kartu Keluarga</li>
+                            <li>KGB terakhir</li>
+                            <li>Surat Keterangan Aktif Belajar/Kuliah</li>
+                            <li>Foto 3x4 Latar Belakang Merah</li>
+                            <li>Karis/Karsu</li>
+                            <li>Akta Kematian <em>(Untuk Pensiun Meninggal Dunia)</em></li>
+                            <li>Surat Keterangan Janda/Duda <em>(Untuk Pensiun Meninggal Dunia)</em></li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 10 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="10 permohonan pengusulan kenaikan pangkat kp kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan10">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 10. Pelayanan Permohonan Pengusulan Kenaikan Pangkat
+                    </button>
+                </h2>
+                <div id="layanan10" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>Kinerja <em>(2 Tahun Terakhir)</em></li>
+                            <li><em>SK Jabatan Terakhir</em></li>
+                            <li><em>PAK ( Bagi pengusulan jabatan fungsional )</em></li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 11 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="11 permohonan pengusulan kenaikan pangkat penyesuaian ijazah pi kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan11">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 11. Pelayanan Permohonan Pengusulan Kenaikan Pangkat Penyesuaian Ijazah
+                    </button>
+                </h2>
+                <div id="layanan11" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>Kinerja <em>(2 Tahun Terakhir)</em></li>
+                            <li>Surat Tanda Lulus Uji Kompetensi/Ujian Dinas</li>
+                            <li>Surat Tugas Belajar</li>
+                            <li>Ijazah dan Transkrip</li>
+                            <li>Uraian Tugas</li>
+                            <li>Anjab ABK</li>
+                            <li>Peta Jabatan</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 12 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="12 permohonan pengusulan pencantuman gelar kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan12">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 12. Pelayanan Permohonan Pengusulan Pencantuman Gelar
+                    </button>
+                </h2>
+                <div id="layanan12" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>SK PNS</li>
+                            <li>SK Pangkat Terakhir</li>
+                            <li>Ijazah dan Transkrip</li>
+                            <li>Asli Surat Tugas Belajar</li>
+                            <li>Akreditasi Prodi Minimal B</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 13 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="kepegawaian" data-keywords="13 permohonan pengusulan cuti tahunan sakit besar melahirkan kepegawaian asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan13">
+                        <span class="badge bg-primary me-3">Kepegawaian</span> 13. Pelayanan Permohonan Pengusulan Cuti
+                    </button>
+                </h2>
+                <div id="layanan13" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Permohonan Cuti diketahui atasan langsung</li>
+                            <li>Surat Keterangan Sakit Dari Dokter Pemerintah <em>(Cuti Sakit dan Cuti Melahirkan)</em></li>
+                            <li>Surat Keterangan Pendukung <em>(Cuti Besar)</em></li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= SEKSI KEUANGAN ================= -->
+
+            <!-- Layanan 14 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="keuangan" data-keywords="14 permohonan rincian gaji slip keuangan asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan14">
+                        <span class="badge bg-success me-3">Keuangan</span> 14. Pelayanan Permohonan Rincian Gaji
+                    </button>
+                </h2>
+                <div id="layanan14" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Surat Permohonan (yang memuat identitas pemohon dan maksud/tujuan peruntukkan rincian gaji)</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 15 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="keuangan" data-keywords="15 permohonan kp4 pegawai keluarga keuangan asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan15">
+                        <span class="badge bg-success me-3">Keuangan</span> 15. Pelayanan Permohonan KP4 Pegawai
+                    </button>
+                </h2>
+                <div id="layanan15" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Surat Permohonan</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan 16 -->
+            <div class="accordion-item border rounded-4 mb-3 overflow-hidden shadow-sm item-layanan" data-seksi="keuangan" data-keywords="16 permohonan pembiayaan pegawai pinjaman kuasapotonggaji keuangan asn kemenag">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-dark fs-6 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#layanan16">
+                        <span class="badge bg-success me-3">Keuangan</span> 16. Permohonan Pembiayaan Pegawai
+                    </button>
+                </h2>
+                <div id="layanan16" class="accordion-collapse collapse" data-bs-parent="#accordionLayanan">
+                    <div class="accordion-body bg-light p-4">
+                        <h6 class="fw-bold text-success mb-2"><i class="fa-solid fa-clipboard-list me-2"></i>Persyaratan Dokumen:</h6>
+                        <ul class="text-secondary small mb-4">
+                            <li>Surat Permohonan.</li>
+                            <li>Surat Rekomendasi dari Pimpinan/Kepala (Madrasah/KUA). <em>(Catatan: Khusus bagi Kepala Madrasah dan Kepala KUA tidak perlu melampirkan surat rekomendasi ini)</em></li>
+                            <li>Surat Kuasa Potong Gaji.</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <a href="https://drive.google.com/file/d/TEMPLATE_ID_DRIVE/view?usp=sharing" target="_blank" class="btn btn-sm btn-outline-primary fw-bold rounded-pill px-3">
+                                <i class="fa-brands fa-google-drive me-1"></i> Download Template
+                            </a>
+                            <a href="https://tally.so/r/FORM_ID" target="_blank" class="btn btn-sm btn-success fw-bold rounded-pill px-3 ms-auto">
+                                <i class="fa-regular fa-pen-to-square me-1"></i> Isi Formulir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Search & Filter -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fitur Pencarian Realtime
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll('.item-layanan');
+
+            items.forEach(function(item) {
+                let text = item.getAttribute('data-keywords') + " " + item.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+
+        // Fitur Filter per Seksi
+        function filterSeksi(seksi, btn) {
+            let items = document.querySelectorAll('.item-layanan');
+            let buttons = document.querySelectorAll('.btn-filter');
+
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            items.forEach(item => {
+                if (seksi === 'semua' || item.getAttribute('data-seksi') === seksi) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
