@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Layanan Khusus ASN - PTSP Online</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .hero-form-asn {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+            color: white;
+        }
+        .form-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- NAVBAR (Dipanggil via JS) -->
+    <div id="navbar-container"></div>
+
+    <!-- HERO HEADER -->
+    <section class="hero-form-asn py-4 shadow-sm">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-1">Formulir Pengajuan Layanan ASN</h2>
+            <p class="small opacity-75 mb-3">Khusus bagi Pegawai / ASN Kementerian Agama.</p>
+            <a href="layanan-asn.html" class="btn btn-sm btn-outline-light rounded-pill px-3">
+                <i class="fa-solid fa-arrow-left me-1"></i> Kembali ke List Layanan ASN
+            </a>
+        </div>
+    </section>
+
+    <!-- KONTEN FORMULIR EMBED TALLY -->
+    <main class="container my-4 flex-grow-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card form-card p-2 p-md-4">
+
+                    <!-- EMBED TALLY FORM LAYANAN KHUSUS ASN -->
+                    <!-- Ganti ID '3x1O2W' di bawah ini dengan ID Form Tally Layanan ASN Anda -->
+                    <iframe 
+                        data-tally-src="https://tally.so/embed/3x1O2W?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                        loading="lazy" 
+                        width="100%" 
+                        height="500" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        title="Formulir Layanan Khusus ASN">
+                    </iframe>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- PENAMPUNG MODAL KONSULTASI -->
+    <div id="modal-container"></div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="small mb-0 text-white-50">&copy; Kementerian Agama. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Script Bootstrap & Tally Embed SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <!-- Load Component Modules -->
+    <script>
+        // 1. Load Navbar & Modal Konsultasi
+        fetch('navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        fetch('modal-konsultasi.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('modal-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
