@@ -17,3 +17,90 @@ body {
 #beranda .btn:hover {
     transform: translateY(-2px);
 }
+
+/* ============================================================
+   PTSP ONLINE KEMENAG ACEH TENGAH - GLOBAL & CUSTOM STYLES
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. HERO HEADER STYLES
+   ------------------------------------------------------------ */
+.hero-form-umum {
+    background: linear-gradient(135deg, #198754 0%, #0d5735 100%);
+    color: #ffffff;
+}
+
+.hero-form-asn,
+.hero-faq {
+    background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+    color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   2. FORM EMBED CARD STYLES
+   ------------------------------------------------------------ */
+.form-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   3. ACCORDION FAQ STYLES (MIRIP DESAIN REFERENSI)
+   ------------------------------------------------------------ */
+.faq-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+
+.faq-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.faq-button {
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 18px 24px;
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 12px;
+}
+
+.faq-button:not(.collapsed) {
+    color: #1e1b4b;
+    background-color: #f8fafc;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.faq-icon-question {
+    color: #0ea5e9; /* Warna ikon tanya biru muda */
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.faq-chevron {
+    color: #64748b;
+    transition: transform 0.2s ease;
+}
+
+.faq-button:not(.collapsed) .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-body {
+    padding: 20px 24px;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
